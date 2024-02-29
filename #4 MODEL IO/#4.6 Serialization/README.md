@@ -26,3 +26,7 @@ with get_openai_callback() as usage:
 save("model.json") 결과
 
 ![image](https://github.com/kdahun/fullstack-gpt/assets/101082485/eb766fa5-5d42-484f-9e54-0503750d16cb)
+
+model.json 가져오기
+
+![image](https://github.com/kdahun/fullstack-gpt/assets/101082485/540430bd-d73d-488f-bfe4-fb0862172b4e)
