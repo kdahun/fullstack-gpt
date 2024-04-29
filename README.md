@@ -38,3 +38,30 @@
 
 ***
 
+## 실습 예제
+```
+from langchain_openai import ChatOpenAI
+
+# model
+llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
+
+# chain 실행
+llm.invoke("지구의 자전 주기는?")
+```
+
+```
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+# prompt + model + output parser
+prompt = ChatPromptTemplate.from_template("You are an expert in astronomy. Answer the question. <Question>: {input}")
+llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
+output_parser = StrOutputParser()
+
+# LCEL chaining
+chain = prompt | llm | output_parser
+
+# chain 호출
+chain.invoke({"input": "지구의 자전 주기는?"})
+```
